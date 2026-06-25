@@ -29,8 +29,8 @@ Le projet contient le **client** qui se connecte à ce serveur :
 ### gpsclient.py (serveur Flask)
 
 - Se connecte en TCP (socket) au téléphone faisant tourner GPS Tether Server (IP + port `8080`).
-- Reçoit en continu les données GPS au format JSON et les stocke en mémoire (`gps_data`) ainsi que dans `static/gpstrack.txt`.
-- Expose 3 routes :
+- Reçoit en continu les données GPS au format JSON et les stocke en mémoire (`gps_data`) ainsi que dans `static/gpstrack.txt` (le fichier log).
+- Expose 4 routes :
   - `GET /` : affiche la page principale (`index.html`).
   - `GET /gps` : renvoie les dernières données GPS au format JSON (interrogée toutes les 3 secondes par `app.js`).
   - `POST /append-prediction` : enregistre dans le log une position prédite (latitude/longitude) lorsque le client n'a pas reçu de données depuis 10 secondes.
@@ -74,7 +74,7 @@ SERVER_PORT = 8080           # Port choisi dans GPS Tether Server
 
 2. **Activer le partage GPS** : sur le téléphone, ouvrir l'application **GPS Tether Server** et appuyer sur le bouton **Start** pour démarrer la diffusion des données GPS.
 
-3. Ouvrir un navigateur à l'adresse `http://<IP_machine>:5000` pour visualiser la position en temps réel sur la carte.
+3. Ouvrir un navigateur à l'adresse `http://localhost:5000` pour visualiser la position en temps réel sur la carte.
 
 ## Notes
 
