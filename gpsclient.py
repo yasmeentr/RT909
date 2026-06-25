@@ -13,7 +13,7 @@ gps_data = None
 logfile = "./static/gpstrack.txt"  
 
 # Configuration d serveur gps
-SERVER_IP = "192.168.0.14"   # IP de mon téléphone
+SERVER_IP = "192.168.0.14"   # IP de mon téléphone affichee sur la partie gauche depuis l'interface de l'application mobile
 SERVER_PORT = 8080           # Port choisi dans GPS Tether Server
 
 def fetch_gps_data():
